@@ -5,21 +5,25 @@
         <title>Home</title>
     </head>
     <body>
-        <div>
-            <div>Product name</div>
-            <div>Price: <span>200,99</span></div>
-            <div>Delivery date: <span>02/01/2023</span> </div>
-
+        <div th:each="order : ${orderList}">
+            <div th:text="${order.productName}">Product name</div>
+            <div>Price: <span th:text="${order.price}">200,99</span></div>
+            <div>Delivery date: <span th:text="${order.deliveryDate}">02/01/2023</span> </div>
             <div>Product: </div>
-            <div>Product url</div>
-
-            <div>Description</div>
             <div>
-                <textarea>Product description</textarea>
+                <label>
+                    <input th:value="${order.productUrl}" value="Product url"/>
+                </label>
             </div>
-
+            <div>Description: </div>
             <div>
-                <img src="">
+                <label>
+                    <textarea th:text="${order.productDescription}">Product description</textarea>
+                </label>
+            </div>
+            <div>Image: </div>
+            <div>
+                <img th:src="${order.imageUrl}" alt="Order image" src="https://bitsofco.de/content/images/2018/12/broken-1.png">
             </div>
         </div>
     </body>
