@@ -8,24 +8,37 @@
     <body>
         <div class="container">
             <div class="card" th:each="order : ${orderList}">
-                <div class="card-header" th:text="${order.productName}">Product name</div>
-                <div>Price: <span th:text="${order.price}">200,99</span></div>
-                <div>Delivery date: <span th:text="${order.deliveryDate}">02/01/2023</span> </div>
-                <div>Product: </div>
-                <div>
-                    <label>
-                        <input class="form-control" th:value="${order.productUrl}" value="Product url"/>
-                    </label>
+                <div class="card-header" th:text="${order.productName}">
+                    Product name
                 </div>
-                <div>Description: </div>
-                <div>
-                    <label>
-                        <textarea class="form-control" th:text="${order.productDescription}">Product description</textarea>
-                    </label>
-                </div>
-                <div>Image: </div>
-                <div>
-                    <img th:src="${order.imageUrl}" alt="Order image" src="https://bitsofco.de/content/images/2018/12/broken-1.png">
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-12 col-sm-8">
+                            <div class="row">
+                                <div class="col-md-4">Price: <span th:text="${order.price}">200,99</span></div>
+                                <div class="col-md-8">Delivery date: <span th:text="${order.deliveryDate}">02/01/2023</span> </div>
+                            </div>
+                            <br>
+                            <div>Product: </div>
+                            <div>
+                                <label>
+                                    <input class="form-control" th:value="${order.productUrl}" value="Product url"/>
+                                </label>
+                            </div>
+                            <div>Description: </div>
+                            <div>
+                                <label>
+                                    <textarea class="form-control" th:text="${order.productDescription}">Product description</textarea>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="col-12 col-sm-4 mb-3">
+                            <div>Image: </div>
+                            <div>
+                                <img class="img-thumbnail" th:src="${order.imageUrl}" alt="Order image" src="https://bitsofco.de/content/images/2018/12/broken-1.png">
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
