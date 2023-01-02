@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Home</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    </head>
+    <body>
+        <div class="container">
+            <div class="jumbotron jumbotron-fluid mb-0">
+                <h1 class="display-4">Air - Register a New Order</h1>
+            </div>
+            <form action="/order/newOrder" method="POST">
+                <div>
+                    <label>Product:
+                        <input name="productName" placeholder="Product name"/>
+                    </label>
+                    <small>Name of the desired product.</small>
+                </div>
+                <div>
+                    <label> Product URL:
+                        <input name="productUrl" placeholder="Product URL"/>
+                    </label>
+                    <small>An URL to the product you're looking for.</small>
+                </div>
+                <div>
+                    <label> Image URL:
+                        <input name="imageUrl" placeholder="Image URL"/>
+                    </label>
+                    <small>An URL to an image of the product you're looking for.</small>
+                </div>
+                <div>
+                    <label>Description:
+                        <textarea name="description" placeholder="Add key details here"></textarea>
+                    </label>
+                </div>
+                <button type="submit">Register</button>
+            </form>
+        </div>
+    </body>
+</html>
