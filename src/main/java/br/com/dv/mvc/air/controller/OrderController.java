@@ -33,6 +33,7 @@ public class OrderController {
     public String newOrder(@Valid OrderDTO dto, BindingResult bindingResult, Model model) {
         if (bindingResult.hasErrors()) {
             model.addAttribute("dto", dto);
+            model.addAttribute("error", "Error: please fill in the field above.");
             return "order/newOrderForm";
         }
         Order order = dto.toOrder();
