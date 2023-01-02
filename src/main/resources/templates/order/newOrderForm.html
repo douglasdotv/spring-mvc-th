@@ -10,32 +10,30 @@
             <div class="jumbotron jumbotron-fluid mb-0">
                 <h1 class="display-4">Air - Register a New Order</h1>
             </div>
-            <form action="/order/newOrder" method="POST">
-                <div>
-                    <label>Product:
-                        <input name="productName" placeholder="Product name"/>
-                    </label>
-                    <small>Name of the desired product.</small>
-                </div>
-                <div>
-                    <label> Product URL:
-                        <input name="productUrl" placeholder="Product URL"/>
-                    </label>
-                    <small>An URL to the product you're looking for.</small>
-                </div>
-                <div>
-                    <label> Image URL:
-                        <input name="imageUrl" placeholder="Image URL"/>
-                    </label>
-                    <small>An URL to an image of the product you're looking for.</small>
-                </div>
-                <div>
-                    <label>Description:
-                        <textarea name="description" placeholder="Add key details here"></textarea>
-                    </label>
-                </div>
-                <button type="submit">Register</button>
-            </form>
+            <div class="card mt-2">
+                <form class="card-body" action="/order/newOrder" method="POST">
+                    <div class="form-group mb-1">
+                        <label for="productName">Product: </label>
+                        <input class="form-control" id="productName" name="productName" placeholder="Product name"/>
+                        <small>Name of the desired product.</small>
+                    </div>
+                    <div class="form-group mb-1">
+                        <label for="productUrl"> Product URL: </label>
+                        <input class="form-control" id="productUrl" name="productUrl" placeholder="Product URL"/>
+                        <small>An URL to the product you're looking for.</small>
+                    </div>
+                    <div class="form-group mb-1">
+                        <label for="imageUrl"> Image URL: </label>
+                        <input class="form-control" id=imageUrl name="imageUrl" placeholder="Image URL"/>
+                        <small>An URL to an image of the product you're looking for.</small>
+                    </div>
+                    <div class="form-group mb-1">
+                        <label for="description">Description:</label>
+                        <textarea class="form-control" id="description" name="description" placeholder="Add some key details here"></textarea>
+                    </div>
+                    <button class="btn btn-primary mt-1" type="submit">Register</button>
+                </form>
+            </div>
         </div>
     </body>
 </html>
