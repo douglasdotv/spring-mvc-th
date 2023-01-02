@@ -1,9 +1,8 @@
 package br.com.dv.mvc.air.controller;
 
 import br.com.dv.mvc.air.model.Order;
-import jakarta.persistence.EntityManager;
-import jakarta.persistence.PersistenceContext;
-import jakarta.persistence.Query;
+import br.com.dv.mvc.air.repository.OrderRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -13,13 +12,16 @@ import java.util.List;
 @Controller
 public class HomeController {
 
-    @PersistenceContext
-    private EntityManager entityManager;
+    private final OrderRepository orderRepository;
+
+    @Autowired
+    public HomeController(OrderRepository orderRepository) {
+        this.orderRepository = orderRepository;
+    }
 
     @GetMapping("/home")
     public String home(Model model) {
-        Query query = entityManager.createQuery("Select p from Order p", Order.class);
-        List<Order> orderList = query.getResultList();
+        List<Order> orderList = orderRepository.getAllOrders();
         model.addAttribute("orderList", orderList);
         return "home";
     }
