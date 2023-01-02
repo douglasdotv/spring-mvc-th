@@ -3,8 +3,10 @@ package br.com.dv.mvc.air.controller;
 import br.com.dv.mvc.air.model.Order;
 import br.com.dv.mvc.air.model.OrderDTO;
 import br.com.dv.mvc.air.repository.OrderRepository;
+import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -26,7 +28,10 @@ public class OrderController {
     }
 
     @PostMapping("newOrder")
-    public String newOrder(OrderDTO dto) {
+    public String newOrder(@Valid OrderDTO dto, BindingResult bindingResult) {
+        if (bindingResult.hasErrors()) {
+            return "order/newOrderForm";
+        }
         Order order = dto.toOrder();
         orderRepository.save(order);
         return "redirect:/home";
