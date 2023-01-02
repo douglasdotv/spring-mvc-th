@@ -17,7 +17,7 @@
                     <a class="nav-item nav-link" href="">Approved</a>
                     <a class="nav-item nav-link" href="">Delivered</a>
                 </div>
-                <button class="btn btn-primary my-2 my-sm-0">Register a new product</button>
+                <a href="/order/form"><button class="btn btn-primary my-2 my-sm-0">Register a new product</button></a>
             </nav>
             <div class="card" th:each="order : ${orderList}">
                 <div class="card-header" th:text="${order.productName}">
