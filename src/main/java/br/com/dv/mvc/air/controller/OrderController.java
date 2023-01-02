@@ -6,6 +6,7 @@ import br.com.dv.mvc.air.repository.OrderRepository;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -23,13 +24,15 @@ public class OrderController {
     }
 
     @GetMapping("form")
-    public String form() {
+    public String form(Model model) {
+        model.addAttribute("dto", new OrderDTO());
         return "order/newOrderForm";
     }
 
     @PostMapping("newOrder")
-    public String newOrder(@Valid OrderDTO dto, BindingResult bindingResult) {
+    public String newOrder(@Valid OrderDTO dto, BindingResult bindingResult, Model model) {
         if (bindingResult.hasErrors()) {
+            model.addAttribute("dto", dto);
             return "order/newOrderForm";
         }
         Order order = dto.toOrder();
