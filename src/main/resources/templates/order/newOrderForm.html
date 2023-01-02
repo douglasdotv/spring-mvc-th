@@ -15,17 +15,17 @@
                     <div class="form-group mb-1">
                         <label for="productName">Product: </label>
                         <input th:field="*{productName}" class="form-control" id="productName" placeholder="Product name"/>
-                        <small>Name of the desired product.</small>
+                        <small>Product name</small>
                     </div>
                     <div class="form-group mb-1">
                         <label for="productUrl"> Product URL: </label>
                         <input th:field="*{productUrl}" class="form-control" id="productUrl" placeholder="Product URL"/>
-                        <small>An URL to the product you're looking for.</small>
+                        <small>An URL to the product you're looking for</small>
                     </div>
                     <div class="form-group mb-1">
                         <label for="imageUrl"> Image URL: </label>
                         <input th:field="*{imageUrl}" class="form-control" id=imageUrl placeholder="Image URL"/>
-                        <small>An URL to an image of the product you're looking for.</small>
+                        <small>An URL to an image of the product you're looking for</small>
                     </div>
                     <div class="form-group mb-1">
                         <label for="description">Description:</label>
@@ -33,6 +33,9 @@
                     </div>
                     <button class="btn btn-primary mt-1" type="submit">Register</button>
                 </form>
+                <div class="card form-group">
+                    <a href="/home"><button class="btn btn-primary mt-1" type="submit">Home</button></a>
+                </div>
             </div>
         </div>
     </body>
