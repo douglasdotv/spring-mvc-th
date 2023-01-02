@@ -13,7 +13,7 @@ public class Order {
     private String productName;
     private BigDecimal price;
     private LocalDate deliveryDate;
-    private String productDescription;
+    private String description;
     private String productUrl;
     private String imageUrl;
 
@@ -41,12 +41,12 @@ public class Order {
         this.deliveryDate = deliveryDate;
     }
 
-    public String getProductDescription() {
-        return productDescription;
+    public String getDescription() {
+        return description;
     }
 
-    public void setProductDescription(String productDescription) {
-        this.productDescription = productDescription;
+    public void setDescription(String description) {
+        this.description = description;
     }
 
     public String getProductUrl() {
