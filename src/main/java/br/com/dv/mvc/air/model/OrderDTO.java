@@ -39,4 +39,13 @@ public class OrderDTO {
         this.imageUrl = imageUrl;
     }
 
+    public Order toOrder() {
+        Order order = new Order();
+        order.setProductName(this.productName);
+        order.setProductUrl(this.productUrl);
+        order.setImageUrl(this.imageUrl);
+        order.setDescription(this.description);
+        return order;
+    }
+
 }
