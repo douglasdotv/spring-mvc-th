@@ -21,7 +21,7 @@ public class HomeController {
 
     @GetMapping("/home")
     public String home(Model model) {
-        List<Order> orderList = orderRepository.getAllOrders();
+        List<Order> orderList = orderRepository.findAll();
         model.addAttribute("orderList", orderList);
         return "home";
     }
